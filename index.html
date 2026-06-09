@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nail Art Classic – Belém do Pará | Brilia Nails</title>
+  <meta name="description" content="Curso Nail Art Classic com Gabriela Samanta. 10 e 11 de agosto de 2026 em Belém do Pará. Vagas limitadas — garanta sua vaga agora." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink:       #E8006B;
+      --pink-light: #FF3DA0;
+      --teal:       #00B4C8;
+      --gold:       #C89B3C;
+      --gold-light: #F0C060;
+      --dark:       #1A0A12;
+    }
+    html { scroll-behavior: smooth; }
+
+    /* ── FULL PAGE BACKGROUND ── */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: url('fundo-gabi.jpg');
+      background-size: cover;
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      /* Fallback color when image not loaded */
+      background-color: #1A0A12;
+    }
+
+    /* Dark overlay — mais leve à esquerda, mais escuro à direita */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(10,3,7,.20) 0%,
+        rgba(10,3,7,.45) 45%,
+        rgba(10,3,7,.75) 70%,
+        rgba(10,3,7,.88) 100%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── LAYOUT: centralizado em todas as telas ── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 0 16px;
+    }
+
+    .content-col {
+      width: 100%;
+      max-width: 560px;
+      padding: 52px 0 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      body { background-attachment: scroll; background-position: center top; }
+      body::before { background: rgba(10,3,7,.72); }
+      .content-col { padding: 36px 0 52px; }
+    }
+
+    /* ── TAGLINE ── */
+    .hero-tagline {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      text-align: center;
+      margin-bottom: 14px;
+      text-shadow: 0 1px 8px rgba(0,0,0,.6);
+    }
+
+    /* ── TITLE ── */
+    .hero-title {
+      font-size: clamp(2.4rem, 7vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 2px 16px rgba(0,0,0,.7);
+      letter-spacing: .02em;
+    }
+    .hero-title .pink { color: var(--pink-light); }
+    .hero-title .teal { color: var(--teal); }
+
+    /* ── SUBTITLE ── */
+    .hero-subtitle {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      text-align: center;
+      text-shadow: 0 1px 8px rgba(0,0,0,.6);
+    }
+
+    /* ── DATE PILLS ── */
+    .hero-date {
+      margin-top: 18px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .pill {
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(6px);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    .pill span { color: var(--pink-light); }
+
+    /* ── HOOK TEXT ── */
+    .hook {
+      margin-top: 32px;
+      text-align: center;
+    }
+    .hook h2 {
+      font-size: clamp(1.2rem, 3.2vw, 1.6rem);
+      font-weight: 900;
+      line-height: 1.3;
+      text-shadow: 0 2px 12px rgba(0,0,0,.7);
+    }
+    .hook p {
+      margin-top: 10px;
+      font-size: .9rem;
+      color: rgba(255,255,255,.75);
+      line-height: 1.65;
+      text-shadow: 0 1px 6px rgba(0,0,0,.5);
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      margin-top: 28px;
+      width: 100%;
+      background: rgba(10,4,8,.72);
+      border: 1px solid rgba(200,155,60,.35);
+      border-radius: 20px;
+      padding: 32px 28px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    .form-card h3 {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .form-card label {
+      display: block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 6px;
+    }
+    .form-card input {
+      width: 100%;
+      background: rgba(255,255,255,.07);
+      border: 1.5px solid rgba(255,255,255,.15);
+      border-radius: 10px;
+      padding: 13px 15px;
+      font-size: .92rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      outline: none;
+      transition: border-color .2s;
+      margin-bottom: 14px;
+    }
+    .form-card input::placeholder { color: rgba(255,255,255,.3); }
+    .form-card input:focus { border-color: var(--pink-light); }
+
+    .btn-primary {
+      width: 100%;
+      background: linear-gradient(135deg, var(--pink) 0%, #A8004D 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 6px 28px rgba(232,0,107,.5);
+    }
+    .btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(232,0,107,.6); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .form-privacy {
+      margin-top: 11px;
+      text-align: center;
+      font-size: .71rem;
+      color: rgba(255,255,255,.38);
+    }
+    .form-privacy span { color: var(--gold-light); }
+
+    /* ── THANK YOU ── */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .thank-you .check { font-size: 2.8rem; margin-bottom: 10px; }
+    .thank-you h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .thank-you p {
+      color: rgba(255,255,255,.7);
+      font-size: .88rem;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 15px 26px;
+      box-shadow: 0 6px 24px rgba(37,211,102,.4);
+      transition: transform .15s;
+    }
+    .btn-whatsapp:hover { transform: translateY(-2px); }
+
+    /* ── INSTAGRAM BADGE ── */
+    .insta-badge {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 8px 18px;
+      opacity: .9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="content-col">
+
+    <p class="hero-tagline">De Belém para o mundo — e de volta pra casa ✦</p>
+
+    <h1 class="hero-title">
+      <span class="pink">NAIL</span> <span class="teal">ART</span><br />CLASSIC
+    </h1>
+    <p class="hero-subtitle">com <strong>Gabriela Samanta</strong></p>
+
+    <div class="hero-date">
+      <div class="pill">📅 <span>10 e 11 de Agosto</span> de 2026</div>
+      <div class="pill">📍 <span>Belém do Pará</span></div>
+    </div>
+
+    <div class="hook">
+      <h2>Quer ser a primeira a saber de tudo<br />e garantir sua vaga com vantagens exclusivas?</h2>
+      <p>Entre no <strong>Grupo VIP</strong> e receba informações antecipadas, conteúdo exclusivo e acesso às melhores condições antes de todo mundo.</p>
+    </div>
+
+    <div class="form-card" id="form-section">
+      <h3>🔒 Quero entrar no Grupo VIP</h3>
+
+      <div id="form-wrapper">
+        <form id="capture-form" novalidate>
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+
+          <label for="whatsapp">WhatsApp (com DDD)</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(91) 9 0000-0000" required />
+
+          <button type="submit" class="btn-primary">
+            QUERO ENTRAR NO GRUPO VIP →
+          </button>
+        </form>
+        <p class="form-privacy">🔐 Seus dados estão seguros. <span>Zero spam.</span></p>
+      </div>
+
+      <div class="thank-you" id="thank-you">
+        <div class="check">🎉</div>
+        <h3>Você está dentro!</h3>
+        <p>Cadastro confirmado, <strong id="first-name-display"></strong>!<br />Clique abaixo para entrar no <strong>Grupo VIP</strong> da Gabi no WhatsApp.</p>
+        <a href="https://chat.whatsapp.com/LizfkrgyGOcDAUvfLbv31T?s=cl&p=i&ilr=0&amv=1" class="btn-whatsapp" target="_blank" rel="noopener" id="whatsapp-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.116 1.533 5.847L.057 23.743a.5.5 0 0 0 .615.612l6.012-1.465A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.682-.508-5.218-1.395l-.374-.218-3.878.945.979-3.783-.239-.389A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Entrar no Grupo VIP
+        </a>
+      </div>
+    </div>
+
+    <a href="https://www.instagram.com/ameigabi/" class="insta-badge" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @ameigabi
+    </a>
+
+  </div>
+</div>
+
+<script>
+  // ── CONFIGURAÇÕES — substitua os dois valores abaixo ──
+  const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/LizfkrgyGOcDAUvfLbv31T?s=cl&p=i&ilr=0&amv=1';
+  const APPS_SCRIPT_URL     = 'https://script.google.com/macros/s/AKfycbyImvbyA2EaXK-iM2rjkNmcNPPNLIey9DOqCrCcebfYAMkJ1WwScqN5vsDb5KCHCGCAYA/exec';
+  // ──────────────────────────────────────────────────────
+
+  const form             = document.getElementById('capture-form');
+  const formWrapper      = document.getElementById('form-wrapper');
+  const thankYou         = document.getElementById('thank-you');
+  const firstNameDisplay = document.getElementById('first-name-display');
+  const submitBtn        = form.querySelector('button[type="submit"]');
+
+  // Máscara WhatsApp
+  const whatsappInput = document.getElementById('whatsapp');
+  whatsappInput.addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 0) {
+      v = v.replace(/^(\d{2})(\d)/, '($1) $2');
+      if (v.length > 9) v = v.replace(/(\d{5})(\d)/, '$1-$2');
+    }
+    this.value = v;
+  });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const nome     = document.getElementById('nome').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const whatsapp = whatsappInput.value.trim();
+
+    if (!nome || !email || !whatsapp) {
+      alert('Por favor, preencha todos os campos 😊');
+      return;
+    }
+
+    // Desabilita botão enquanto envia
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'ENVIANDO...';
+
+    try {
+      // Envia para o Google Sheets via Apps Script
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // necessário para Apps Script
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome, email, whatsapp })
+      });
+    } catch (err) {
+      // Continua mesmo se der erro de rede (no-cors não retorna resposta)
+      console.warn('Aviso ao salvar lead:', err);
+    }
+
+    // Mostra tela de obrigado
+    document.getElementById('whatsapp-link').href = WHATSAPP_GROUP_LINK;
+    firstNameDisplay.textContent = nome.split(' ')[0];
+    formWrapper.style.display = 'none';
+    thankYou.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
